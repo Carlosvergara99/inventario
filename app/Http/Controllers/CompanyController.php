@@ -13,6 +13,7 @@ class CompanyController extends Controller
     {
        $asset = DB::table('company_assets as ca')
            ->join('employees as e', 'ca.employees_id', '=', 'e.id')
+           ->where('ca.status',1)
            ->select('ca.*','e.name')
            ->get();
         $asset = $asset->unique('serial_code');
@@ -47,12 +48,14 @@ class CompanyController extends Controller
     public function edit(Request $request)
     {
         $company_assets= DB::table('company_assets')
-        ->where('serial_code','like', $request->serial_code)   
+        ->where('serial_code','like', $request->serial_code)
+        ->where('status',1)    
         ->first(); 
 
 
         $employees = DB::table('company_assets')
-        ->where('serial_code','like', $request->serial_code)   
+        ->where('serial_code','like', $request->serial_code)  
+        ->where('status',1) 
         ->select('employees_id')
         ->get();
 
