@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('trademark', 250);
             $table->string('refernece', 250);
             $table->longText('description');
+            $table->char('status', 2);
             $table->timestamps();
             $table->unsignedBigInteger('employees_id');
             $table->foreign('employees_id')->references('id')->on('employees');

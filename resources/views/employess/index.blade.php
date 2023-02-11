@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
- 
+ <hr>
 <button type="button" class="btn btn-primary CreatesEmployees">
     Crear Empeleado 
 </button>
