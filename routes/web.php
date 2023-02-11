@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::post('/employees/edit', [EmployeesController::class, 'edit']);
 Route::post('/employees/update', [EmployeesController::class, 'update']);
 
 
-Route::get('/', [CompanyController::class, 'index']);
+Route::get('/asset', [CompanyController::class, 'index']);
 Route::post('/campany/save', [CompanyController::class, 'save']);
 Route::post('/campany/edit', [CompanyController::class, 'edit']);
 Route::post('/campany/update', [CompanyController::class, 'update']);
